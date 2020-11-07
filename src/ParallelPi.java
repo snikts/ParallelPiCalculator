@@ -22,17 +22,17 @@ public class ParallelPi {
         ThreadSafeQueue taskQueue = new ThreadSafeQueue();
         for (int i = 0; i < 1024; i++) {
             temp.add(i);
-            System.out.println("added num " + i);
+//            System.out.println("added num " + i);
         }
         if(args.length > 0) {
-            if (args[1].equals("-random")) {
+            if (args[0].equals("-random")) {
                 // do random stuff
                 Collections.shuffle(temp);
                 for (int i = 0; i < temp.size(); i++) {
-                    System.out.println("Enqueued " + temp.get(i));
+//                    System.out.println("Enqueued " + temp.get(i));
                     taskQueue.enqueue(temp.get(i));
                 }
-            } else if (args[1].equals("-reverse")) {
+            } else if (args[0].equals("-reverse")) {
                 // do reverse stuff here
                 Collections.reverse(temp);
                 for (int i = 0; i < temp.size(); i++) {
